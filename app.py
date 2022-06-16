@@ -8,7 +8,7 @@ from datetime import timedelta
 from urllib.request import urlopen #Haritalar için GeoJson bilgilerini almak için gerekli kütüphaneler
 import json
 
-app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # dataFramelerin düzenlenmesi
 df = pd.read_csv("veriler.csv")
@@ -192,4 +192,4 @@ app.layout = dbc.Container(html.Div(children=[
 ]))
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
